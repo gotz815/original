@@ -1,0 +1,30 @@
+
+<div class="contents row">
+  
+	<div class="row">
+		<div class="col-xs-1 col-sm-3 col-md-3" %="">
+    	</div>
+
+	    <div class="article col-xs-10 col-sm-6 col-md-6">
+	      <h1><%= @nickname %>さんの投稿一覧</h1>
+	      <% @articles.each do |article| %>
+	        <tr>
+	          <div class="article-title" style="#277a49">
+	          	
+	          </style>
+	            <td><%= simple_format(article.title) %></td>
+	          </div>
+	          <div class="article-body">
+	            <td><%= simple_format(article.text) %></td>
+	          </div>
+	          <ul class="more_list">
+	            <li>
+	              <%= link_to "詳細", article_path(article.id), method: :get %>
+	            </li>
+	          </ul>
+	        </tr>
+	      <% end %>
+	    </div>
+	</div>
+	<br>
+</div>

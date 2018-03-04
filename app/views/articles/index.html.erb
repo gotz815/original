@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+ 
+<div class="row">
+    <div class="col-xs-1 col-sm-3 col-md-3" %="">
+    </div>
+
+    <div class="col-xs-10 col-sm-6 col-md-6">
+      <% @articles.each do |article| %>
+        <tr>
+          <div class="well">
+            <td><%= article.title %></td>
+          </div>
+          <div class="well well-lg">
+            <td><%= article.text %></td>
+          </div>
+          <ul class="more_list">
+            <li>
+              <%= link_to "詳細", article_path(article.id), method: :get %>
+            </li>
+          </ul>
+        </tr>
+      <% end %>
+    </div>
+</div>
+<br>
+
+

@@ -1,0 +1,35 @@
+<div class="row">  
+  <div class="col-xs-1 col-sm-3 col-md-3" %="">
+  </div>
+  <div class="col-xs-10 col-sm-6 col-md-6">
+
+    <%= form_for(@article) do |f| %>
+      <% if @article.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+          <ul>
+          <% @article.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </div>
+      <div class="field">
+        <%= f.label :text %><br>
+        <%= f.text_area :text %>
+      </div>
+      <div class="actions">
+        <%= button_tag type: "submit", class: "btn btn--block" do %>
+          投稿する<i class="icon-arrow-right"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
